@@ -128,22 +128,6 @@
     }
   },
   {
-    "name": "IMG_1224bn copia.webp",
-    "path": "dossier/bebe/webp/IMG_1224bn copia.webp",
-    "sha": "7fc83e2cb08b3cb4bc00c16e7ca667812fab4209",
-    "size": 25224,
-    "url": "https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/bebe/webp/IMG_1224bn%20copia.webp?ref=master",
-    "html_url": "https://github.com/idomingos/IsabelGimenez/blob/master/dossier/bebe/webp/IMG_1224bn%20copia.webp",
-    "git_url": "https://api.github.com/repos/idomingos/IsabelGimenez/git/blobs/7fc83e2cb08b3cb4bc00c16e7ca667812fab4209",
-    "download_url": "https://raw.githubusercontent.com/idomingos/IsabelGimenez/master/dossier/bebe/webp/IMG_1224bn%20copia.webp",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/bebe/webp/IMG_1224bn%20copia.webp?ref=master",
-      "git": "https://api.github.com/repos/idomingos/IsabelGimenez/git/blobs/7fc83e2cb08b3cb4bc00c16e7ca667812fab4209",
-      "html": "https://github.com/idomingos/IsabelGimenez/blob/master/dossier/bebe/webp/IMG_1224bn%20copia.webp"
-    }
-  },
-  {
     "name": "IMG_1291b.webp",
     "path": "dossier/bebe/webp/IMG_1291b.webp",
     "sha": "22d96b46f20a20c23e80e2560eb9b64d7288f10c",

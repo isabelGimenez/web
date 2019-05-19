@@ -256,22 +256,6 @@
     }
   },
   {
-    "name": "IMG_7007b.jpg",
-    "path": "dossier/nou Nat/jpg/IMG_7007b.jpg",
-    "sha": "ffc0c1b04e8043e84b9d45239d5a5dc17cc8df26",
-    "size": 23201,
-    "url": "https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/nou%20Nat/jpg/IMG_7007b.jpg?ref=master",
-    "html_url": "https://github.com/idomingos/IsabelGimenez/blob/master/dossier/nou%20Nat/jpg/IMG_7007b.jpg",
-    "git_url": "https://api.github.com/repos/idomingos/IsabelGimenez/git/blobs/ffc0c1b04e8043e84b9d45239d5a5dc17cc8df26",
-    "download_url": "https://raw.githubusercontent.com/idomingos/IsabelGimenez/master/dossier/nou%20Nat/jpg/IMG_7007b.jpg",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/nou%20Nat/jpg/IMG_7007b.jpg?ref=master",
-      "git": "https://api.github.com/repos/idomingos/IsabelGimenez/git/blobs/ffc0c1b04e8043e84b9d45239d5a5dc17cc8df26",
-      "html": "https://github.com/idomingos/IsabelGimenez/blob/master/dossier/nou%20Nat/jpg/IMG_7007b.jpg"
-    }
-  },
-  {
     "name": "IMG_7052b.jpg",
     "path": "dossier/nou Nat/jpg/IMG_7052b.jpg",
     "sha": "82eec5bc96b2cda7e113e68d5628649a74f20955",
