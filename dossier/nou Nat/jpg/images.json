@@ -352,22 +352,6 @@
     }
   },
   {
-    "name": "IMG_8646bn.jpg",
-    "path": "dossier/nou Nat/jpg/IMG_8646bn.jpg",
-    "sha": "c41b94dab43fa3e307b822416a05e2e84ce45f82",
-    "size": 24184,
-    "url": "https://api.github.com/repos/isabelGimenez/web/contents/dossier/nou%20Nat/jpg/IMG_8646bn.jpg?ref=master",
-    "html_url": "https://github.com/isabelGimenez/web/blob/master/dossier/nou%20Nat/jpg/IMG_8646bn.jpg",
-    "git_url": "https://api.github.com/repos/isabelGimenez/web/git/blobs/c41b94dab43fa3e307b822416a05e2e84ce45f82",
-    "download_url": "https://raw.githubusercontent.com/isabelGimenez/web/master/dossier/nou%20Nat/jpg/IMG_8646bn.jpg",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/isabelGimenez/web/contents/dossier/nou%20Nat/jpg/IMG_8646bn.jpg?ref=master",
-      "git": "https://api.github.com/repos/isabelGimenez/web/git/blobs/c41b94dab43fa3e307b822416a05e2e84ce45f82",
-      "html": "https://github.com/isabelGimenez/web/blob/master/dossier/nou%20Nat/jpg/IMG_8646bn.jpg"
-    }
-  },
-  {
     "name": "IMG_9083 copia.jpg",
     "path": "dossier/nou Nat/jpg/IMG_9083 copia.jpg",
     "sha": "eae320ca03fb957a1a62e6e91876d39005d8543c",
