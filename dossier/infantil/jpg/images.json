@@ -688,22 +688,6 @@
     }
   },
   {
-    "name": "IMG_8325.jpg",
-    "path": "dossier/infantil/jpg/IMG_8325.jpg",
-    "sha": "63ad0c16a722b9087c3958f6b3ad10a5eb78a7e3",
-    "size": 59147,
-    "url": "https://api.github.com/repos/isabelGimenez/web/contents/dossier/infantil/jpg/IMG_8325.jpg?ref=master",
-    "html_url": "https://github.com/isabelGimenez/web/blob/master/dossier/infantil/jpg/IMG_8325.jpg",
-    "git_url": "https://api.github.com/repos/isabelGimenez/web/git/blobs/63ad0c16a722b9087c3958f6b3ad10a5eb78a7e3",
-    "download_url": "https://raw.githubusercontent.com/isabelGimenez/web/master/dossier/infantil/jpg/IMG_8325.jpg",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/isabelGimenez/web/contents/dossier/infantil/jpg/IMG_8325.jpg?ref=master",
-      "git": "https://api.github.com/repos/isabelGimenez/web/git/blobs/63ad0c16a722b9087c3958f6b3ad10a5eb78a7e3",
-      "html": "https://github.com/isabelGimenez/web/blob/master/dossier/infantil/jpg/IMG_8325.jpg"
-    }
-  },
-  {
     "name": "IMG_8693 copia.jpg",
     "path": "dossier/infantil/jpg/IMG_8693 copia.jpg",
     "sha": "e5d946caa7f33b165d50c8d97084923a2c94d118",
@@ -1058,16 +1042,16 @@
   {
     "name": "images.json",
     "path": "dossier/infantil/jpg/images.json",
-    "sha": "c8d377ae507f4f90d130793b72f4a4e8b2109c2d",
+    "sha": "4557b21291db0060ec3dfce5b21efeda6f03b878",
     "size": 66597,
     "url": "https://api.github.com/repos/isabelGimenez/web/contents/dossier/infantil/jpg/images.json?ref=master",
     "html_url": "https://github.com/isabelGimenez/web/blob/master/dossier/infantil/jpg/images.json",
-    "git_url": "https://api.github.com/repos/isabelGimenez/web/git/blobs/c8d377ae507f4f90d130793b72f4a4e8b2109c2d",
+    "git_url": "https://api.github.com/repos/isabelGimenez/web/git/blobs/4557b21291db0060ec3dfce5b21efeda6f03b878",
     "download_url": "https://raw.githubusercontent.com/isabelGimenez/web/master/dossier/infantil/jpg/images.json",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/isabelGimenez/web/contents/dossier/infantil/jpg/images.json?ref=master",
-      "git": "https://api.github.com/repos/isabelGimenez/web/git/blobs/c8d377ae507f4f90d130793b72f4a4e8b2109c2d",
+      "git": "https://api.github.com/repos/isabelGimenez/web/git/blobs/4557b21291db0060ec3dfce5b21efeda6f03b878",
       "html": "https://github.com/isabelGimenez/web/blob/master/dossier/infantil/jpg/images.json"
     }
   }
