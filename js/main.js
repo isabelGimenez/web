@@ -70,6 +70,7 @@ var browseDetection = function () {
 	 else if (navigator.userAgent.search("Opera") >= 0) {
 	        return '/webp/';
 	 }
+   else return '/jpg/'; 
  };
 
 var removeChilds = function(element){
