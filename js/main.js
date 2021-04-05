@@ -37,66 +37,82 @@
  * Juan Padial jpadial@cybmeta.com
  */
 function getAbsolutePath() {
-    var loc = window.location;
-    var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+    let loc = window.location;
+    let pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
 
-var dUrl='./dossier.json';
-var bUrl = getAbsolutePath();
-var dossier = new Array();
-var msnry;
-var first=0;
+const dUrl = './dossier.json';
+const bUrl = getAbsolutePath();
+let dossier = [];
+//var msnry;
+let first = 0;
 
-var browseDetection = function () {
+function browseDetection () {
 
-	 //Check if browser is IE
-	 if (navigator.userAgent.search("MSIE") >= 0) {
-	        return '/jpg/';
-	 }
-	 //Check if browser is Chrome
-	 else if (navigator.userAgent.search("Chrome") >= 0) {
-	        return '/webp/';
-	 }
-	 //Check if browser is Firefox 
-	 else if (navigator.userAgent.search("Firefox") >= 0) {
-	        return '/jpg/';
-	 }
-	 //Check if browser is Safari
-	 else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-	        return '/jpg/';
-	 }
-	 //Check if browser is Opera
-	 else if (navigator.userAgent.search("Opera") >= 0) {
-	        return '/webp/';
-	 }
-   else return '/jpg/'; 
- };
+    //Check if browser is IE
+    if (navigator.userAgent.search("MSIE") >= 0) {
+        return '/jpg/';
+    }
+    //Check if browser is Chrome
+    else if (navigator.userAgent.search("Chrome") >= 0) {
+        return '/webp/';
+    }
+    //Check if browser is Firefox
+    else if (navigator.userAgent.search("Firefox") >= 0) {
+        return '/jpg/';
+    }
+    //Check if browser is Safari
+    else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        return '/jpg/';
+    }
+    //Check if browser is Opera
+    else if (navigator.userAgent.search("Opera") >= 0) {
+        return '/webp/';
+    }
+}
 
-var removeChilds = function(element){
+let removeChilds = function(element){
   while(element.hasChildNodes()){
     element.removeChild(element.firstChild);
   }
 };
 
-var hiddenElement = function(){
+let hiddenElement = function(){
   let element = document.getElementById("portada");
   element.style.display = "none";
+  hiddenSessions();
 };
 
-var portada = function(){
+let hiddenSessions = function(){
+    let n = document.getElementById("gsessio").children;
+    for (let i=0; i <n.length; i++){
+        n[i].style.display = "none";
+    }
+}
+
+let showSession = function(id){
+    portada();
+    document.getElementById("portada").style.display="none";
+    document.getElementById(id).style.display = "block";
+
+}
+
+let portada = function(){
   let element = document.getElementById("portada");
   element.style.display = "block";
   let grid = document.querySelector('.grid');
   removeChilds(grid);
   grid.setAttribute("class","grid");
   grid.setAttribute("style",'');
+  hiddenSessions();
+
 };
 
-var addEvent = function(element, event, selector, func) {    
+function addEvent (element, event, selector, func) {
     element.addEventListener(event, function(e){
-        var that = this;
-        var helper = function (el) {
+        let that = this;
+        let helper = function (el) {
             if (el !== that) {
                 if (el.classList.contains(selector)) {
                     return el;
@@ -104,40 +120,40 @@ var addEvent = function(element, event, selector, func) {
                 return helper(el.parentNode);
             }
             return false;
-        }
-        var el = helper(e.target);
+        };
+        let el = helper(e.target);
         if (el !== false) {
             func.call(this, e);
         }
     });
-};
+}
 
-var getPos = function(name){
+function getPos (name){
   let pos=0;
   dossier.forEach(function(element,i){
-    if(element.name == name)  pos= i;
+    if(element.name === name)  pos = i;
   });
   return pos;
-};
+}
 
-var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
+function getJSON (url, callback) {
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'json';
     xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
+        let status = xhr.status;
+        if (status === 200) {
         callback(null, xhr.response);
       } else {
         callback(status, xhr.response);
       }
     };
     xhr.send();
-};
+}
 
-var pintarMenu = function(nom, data){
+function pintarMenu (nom, data){
   let menu = document.getElementById(nom);
-  if (menu != undefined){
+  if (menu !== undefined){
     data.forEach(function(e){
       let element = document.createElement("a");
       element.classList.add('dropdown-item');
@@ -145,7 +161,7 @@ var pintarMenu = function(nom, data){
       element.classList.add('bg-light');
       let name = e.name;
       element.setAttribute("id", name);
-      if(name=="embaras") name = "embar&agrave;s";
+      if(name === "embaras") name = "embar&agrave;s";
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("href",'#dossier');
       element.addEventListener("click", hiddenElement);
@@ -153,9 +169,9 @@ var pintarMenu = function(nom, data){
       menu.appendChild(element);      
     });
   }
-};
+}
 
-var pintarImatges = function(e){
+function pintarImatges (e){
 	e.preventDefault();
   	let grid = document.querySelector('.grid');
   	grid.className= '';
@@ -167,7 +183,7 @@ var pintarImatges = function(e){
 	    image.classList.add("img-thumbnail");
 	    let element = document.createElement("li");
 	    element.classList.add("grid-item");
-	    if (i==0){
+	    if (i===0){
 	    	element.setAttribute("id", "gran");
 	    }
 	    if(image.width>image.height){
@@ -176,10 +192,14 @@ var pintarImatges = function(e){
 	    else{
 	    	image.classList.add("vertical");
 	    }
-	    element.appendChild(image);
+
+       // imagesLoaded( image, function(){
+            element.appendChild(image);
+        //});
+
 	    grid.insertBefore(element, grid.firstChild);
   	});
-	var anim = new AnimOnScroll( document.getElementById( 'grid' ), {
+	let anim = new AnimOnScroll( document.getElementById( 'grid' ), {
 		    	minDuration : 0.4,
 		    	maxDuration : 0.7,
 				viewportFactor : 0.2
@@ -189,9 +209,10 @@ var pintarImatges = function(e){
     	addEvent(grid, 'click', 'grid-item', function(e){ 
     		let tipus;
       		e.preventDefault();
-        	target = e.target;
-	        if(e.target.tagName=="IMG"){
-	        	if($(e.target).hasClass( "vertical" )){
+        	let target = e.target;
+	        if(e.target.tagName==="IMG"){
+	        	//if($(e.target).hasClass( "vertical" )){
+                if(e.target.classList.contains( "vertical" )){
 	        		tipus = 'grid-item--gran-vertical';
 	        	}
 	        	else{
@@ -199,50 +220,63 @@ var pintarImatges = function(e){
 	        	}
 	          target=e.target.parentElement;
 	        }
-	        if(target.tagName=="LI"){
+	        if(target.tagName==="LI"){
     		    target.classList.toggle(tipus);
-          		if(target!=gran){
+          		if(target!==gran){
             		gran.classList.remove('grid-item--gran-horitzontal');
             		gran.classList.remove('grid-item--gran-vertical');
           		}
           		// trigger layout
-          		gran=target;
+          		gran = target;
  		        anim.layout();
         	}
     	});
     	first++;
   	}
-};
+  /*	let element = document.createElement("p");
+  	element.textContent = "Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.";
+  	document.getElementById("gallery").appendChild(element);*/
+}
 
 window.onload = function(){
-  let img = document.createElement("img");
+
+
+    //document.getElementById("pro").onresize= function (){
+     //   let h =window.innerHeight*0.7;
+       // document.getElementById("pro").style.height= h+"px";
+   // }
+
+    /* Portada */
+ /* let img = document.createElement("img");
   img.src = "./abril1920.jpg";
   img.classList.add('img-fluid');
   img.setAttribute("max-width",'100%');
 
   imagesLoaded( img, function(){
     document.getElementById('portada').appendChild(img);
-  });
+  });*/
+
 	 /*Get Dossier */
   	getJSON(dUrl, function(err, data) {
     	if (err !== null) {
         	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
       	} 
     	else {
-        	data.forEach(function(album,i){
-                      var Album = new Object();
-                      Album.name = album.name;
-                      Album.images = new Array(); 
-                      aURL = bUrl+album.path+browseDetection() + 'images.json';
+        	data.forEach(function(album){
+                let Album = {};
+                Album.name = album.name;
+                      Album.images = [];
+                      let aURL = bUrl+album.path+browseDetection() + 'images.json';
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
-                                        alert('Something went wrong1: ' + err);
+                                        alert('Something went wrong: ' + err);
                                       }
                                       else{
-                                        data.forEach(function(imatge,f){
-                                          if (imatge.name != "images.json"){
+                                        data.forEach(function(imatge){
+                                          if (imatge.name !== "images.json"){
                                             let image = new Image();
-                                            image.src = bUrl+ imatge.path; 
+                                            image.src = bUrl + imatge.path;
+                                            image.alt = imatge.description;
                                             Album.images.push(image);
                                           }
                                         });

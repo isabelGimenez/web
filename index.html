@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml" >
+<html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+	  xmlns="http://www.w3.org/1999/html">
 <head>
 	<!--Cache Control -->
-	<meta http-equiv="last-modified" content="Fri, 28 Dec 2018 10:00:46 GMT " />
-	<meta http-equiv="cache-control" content="Private" />
-	<meta http-equiv="Expires" content="3860000" />
+	<!meta content="Fri, 28 Dec 2018 10:00:46 GMT " http-equiv="last-modified"/>
+	<!meta content="Private" http-equiv="cache-control"/>
+	<!meta content="604800" http-equiv="Expires"/>
+	<meta content="302400" http-equiv="refresh">
 	<!-- Info -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -13,7 +15,7 @@
     <meta name="description" content="Website d&#39;Isabel Gim&#233;nez Al&#237;as."/>
     <meta name='target' content='all'/>
     <meta name='HandheldFriendly' content='True'/>
-    <meta name="keywords" content="Lleida, Catalunya, festa, photo, artist, econòmic, newborn"/>
+    <meta name="keywords" content="Lleida, Catalunya, photo, artist, econòmic, newborn"/>
     <meta name="copyright" content="Isabel Gim&#233;nez 2019"/>
     <meta name="robots" content="Index,Follow"/>
     <meta name='url' content='https://www.isabelgimenez.cat/'>
@@ -37,7 +39,7 @@
 	<meta name="twitter:card" content="summary"/>
 	<meta name="twitter:description" content="Les obres d&#39;Isabel Gim&#233;nez Al&#237;as"/>
 	<!-- Icon -->
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="./icon/apple-touch-icon-57x57.png" />
+	<!--link rel="apple-touch-icon-precomposed" sizes="57x57" href="./icon/apple-touch-icon-57x57.png" /-->
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./icon/apple-touch-icon-114x114.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./icon/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./icon/apple-touch-icon-144x144.png" />
@@ -57,19 +59,21 @@
 	<meta name="msapplication-square150x150logo" content="./icon/mstile-150x150.png" />
 	<!--meta name="msapplication-wide310x150logo" content="./icon/mstile-310x150.png" /-->
 	<meta name="msapplication-square310x310logo" content="./icon/mstile-310x310.png" />
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<script src="js/library/jquery-3.5.1.min.js"></script>
+	<script src="js/library/popper.min.js"></script>
+	<script src="js/library/bootstrap.min.js"></script>
+
 	<script type="text/javascript" src="./js/main.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/modernizr.custom.js"></script>
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="js/library/masonry.pkgd.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	
 </head>
 <body>
+
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
     		<!--a class="navbar-brand" href="#">Isabel Gim&#233;nez Al&#237;as - Fot&#242;grafa</a-->
@@ -79,17 +83,32 @@
 
     		<div class="navbar-collapse collapse" id="navbarColor01" style="">
       			<ul class="navbar-nav mr-auto">
-			        <li class="nav-item">
-                      	<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#qui" href="#" >Qui s&oacute;c</a>
-                    </li>                        
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="sessionsDrop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Sessions
+						</a>
+						<div id="Sessions" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sembaras')">Embar&agrave;s</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Snounat')">Nounat</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sbebe')">Bebé</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sinfantil')">Infantil</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Scomunions')">Comunions</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sregal')">Vals regal</button>
+						</div>
+					</li>
                     <li class="nav-item dropdown">
 				    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				   			Serveis
+				   			Galeria
 				       	</a>
 					   	<div id="Dossier" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown"></div>
-				   	</li>                     
-                    <li class="nav-item">
-                       	<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#contacte" href="#">Contacte</a>
+				   	</li>
+					<li class="nav-item">
+						<!--a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#qui" href="#" >Qui s&oacute;c</a-->
+						<a class="nav-link js-scroll-trigger" href="#" onclick="showSession('Squi')">Qui s&oacute;c</a>
+					</li>
+					<li class="nav-item">
+                       	<a class="nav-link js-scroll-trigger"  href="#" onclick="showSession('Scontacte')" >Contacte</a>
                     </li>
       			</ul>
       			<!-- Future function -->
@@ -104,116 +123,282 @@
   		</nav>
 	</header>
 
-<!-- Modal Qui -->
-	<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	 	 <!-- dialog -->
-	  	<div class="modal-dialog modal-dialog-centered" role="document">
-	    	<!-- content -->
-	    	<div class="modal-content bg-light">
-	      		<!-- header -->
-	     		<div class="modal-header">
-	        		<h1 id="myModalLabel" class="modal-title">
-	          			Qui s&oacute;c
-	        		</h1>
-	      		</div>
-	      		<!-- header -->
-	     		<!-- body -->
-	      		<div class="modal-body">     
-	        		<p>S&oacute;c Isabel,  una persona creativa i inquieta que amb la fotograf&iacute;a i la dansa he trobat la manera d&#39;expressar-me i  emocionar-me.</p>
-					<p>M&#39;agrada captar les emocions del moment, una mirada, un gest, un instant…</p>
-					<p>M&#39;he especialitzat en fotograf&iacute;a nou nat, infantil, d&#39;embar&agrave;s i fam&iacute;lia ja que &eacute;s el que m&#39;omple de veritat, s&oacute;n moments ef&iacute;mers i &uacute;nics que no es tornen a repetir i que tinc el privilegi de captar-los amb la c&agrave;mara.</p>
-					<P>Els reportatges poden ser d&#39;estudi o d&#39;exterior, i disposo d&#39;atrezzo per tots els tipus de reportatges, aix&ograve; si, sempre estic oberta a les idees del client.</P>
-	      		</div>
-	      		<!-- body -->
-	      		<!-- footer -->
-	      		<div class="modal-footer">
-	        		<button class="btn btn-secondary" data-dismiss="modal">
-	          			Tancar
-	        		</button>
-	      		</div>
-	      		<!-- footer -->
-	    	</div>
-	    	<!-- content -->
-	  	</div>
-  		<!-- dialog -->
-	</div>
-	<!-- Modal Qui -->
+	<main role="main" class="">
+		<div class="row">
+			<!--Portada-->
+			<div class="col-12" id="portada"  style="background-size: cover; background-position: center; background-repeat: no-repeat">
+				<!--div class="jumbotron" -->
+				<div id="carouselIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselIndicators" data-slide-to="3"></li>
+					</ol>
+					<div id="pro" class="carousel-inner" role="listbox" >
+						<div class="carousel-item active" style="cursor: alias" onclick="document.getElementById('infantil').click()" >
+							<picture>
+								<source srcset="./portada/i2880.jpg 2000w, ./portada/i1024.jpg 1000w, ./portada/i800.jpg 400w, ./portada/i400.jpg 200w">
+								<img class="d-block w-75" src="./portada/i400.jpg" alt="Infantil" style="margin:auto; " >
+							</picture>
+							<div class="carousel-caption d-none d-md-block">
+								<h2>Infantil</h2>
+							</div>
+						</div>
+						<div class="carousel-item" style="cursor: alias" onclick="document.getElementById('embaras').click()">
+							<picture>
+								<source srcset="./portada/e2880.jpg 2000w, ./portada/e1280.jpg 1000w, ./portada/e1024.jpg 300w">
+								<img class="d-block w-75" src="./portada/e1024.jpg" alt="Embar&agrave;s" style="margin:auto">
+							</picture>
+							<div class="carousel-caption d-none d-md-block">
+								<h2>Embaràs</h2>
+							</div>
+						</div>
+						<div class="carousel-item" style="cursor: alias" onclick="document.getElementById('nou Nat').click()">
+							<picture>
+								<source srcset="./portada/n2880.jpg 2000w, ./portada/n1280.jpg 1000w, ./portada/n1024.jpg 300w">
+								<img class="d-block w-75" src="./portada/n1024.jpg" alt="Comunions" style="margin:auto">
+							</picture>
+							<div class="carousel-caption d-none d-md-block">
+								<h2>Nounat</h2>
+							</div>
+						</div>
+						<div class="carousel-item" style="cursor: alias" onclick="document.getElementById('bebe').click()">
+							<picture>
+								<source srcset="./portada/b2880.jpg 2000w, ./portada/b1280.jpg 1000w, ./portada/b1024.jpg 300w">
+								<img class="d-block w-75" src="./portada/b1024.jpg" alt="First slide" style="margin:auto">
+							</picture>
+								<div class="carousel-caption d-none d-md-block">
+								<h2>Bebé</h2>
+							</div>
+						</div>
+						<div class="carousel-item" style="cursor: alias" onclick="document.getElementById('comunions').click()">
+							<picture>
+								<source srcset="./portada/c2880.jpg 2000w, ./portada/c1280.jpg 1000w, ./portada/c1024.jpg 300w">
+								<img class="d-block w-75" src="./portada/c1024.jpg" alt="Second slide" style="margin:auto">
+							</picture>
+							<div class="carousel-caption d-none d-md-block">
+								<h2>Comunió</h2>
+							</div>
+						</div>
+					</div>
+					<a style="width: 12%" class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a style="width: 12%" class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<!--Portada-->
 
-<!-- Modal Contacte -->
-	<div id="contacte" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	 	 <!-- dialog -->
-	  	<div class="modal-dialog modal-dialog-centered" role="document">
-	    	<!-- content -->
-	    	<div class="modal-content bg-light">
-	      		<!-- header -->
-	     		<div class="modal-header">
-	        		<h1 id="myModalLabel" class="modal-title">
-	          			Contacte
-	        		</h1>
-	      		</div>
-	      		<!-- header -->
-	     		<!-- body -->
-	      		<div class="modal-body">     
-	        		<p>Correu electronic: <a href="mailto:isabel@isabelgimenez.cat">isabel@isabelgimenez.cat</a></p>
-					<p>Facebook: <a href="https://www.facebook.com/isabelgimenezfotografia/">www.facebook.com/isabelgimenezfotografia</a></p>
-					<p>Tel&egrave;fon: <a href="tel:+34620293166">620293166</a></p>
-	      		</div>
-	      		<!-- body -->
-	      		<!-- footer -->
-	      		<div class="modal-footer">
-	        		<button class="btn btn-secondary" data-dismiss="modal">
-	          			Tancar
-	        		</button>
-	      		</div>
-	      		<!-- footer -->
-	    	</div>
-	    	<!-- content -->
-	  	</div>
-  		<!-- dialog -->
-	</div>
-	<!-- Modal Contacte -->
+			<!-- Gallery -->
+			<div class="col-12" id="gallery">
+	 		   <ul class="grid" id="grid"> <!--li class='grid-sizer'></li--></ul>
+				<!--div class="row"><p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p></div-->
+			</div>
+			<!-- /Gallery -->
 
-	<!--Portada-->
-	<section class="jumbotron " id="portada">
-		<!--div class="container-fluid">
-		<div class="row h-100 justify-content-center align-items-center">
-			<div class="col-12">
-				<h2 class="align-middle anim aSlow text-center">Isabel Gim&#233;nez Al&#237;as</h2>
-				<br>
-				<h4 class="align-middle anim aFast text-center">Fot&#242;grafa</h4-->
-					<!--img src="./abril1920.jpg" class="img-fluid" alt="Abril" style="max-width: 100%"-->
+			<!--sessions-->
+			<div class="col-12" style="margin: auto">
+				<div class="container d-flex justify-content-center" id="gsessio">
+					<article style="display: none" id="Squi">
+						<div class="row">
+							<div class="col-md-6">
+								<figure class="figure">
+									<img src="./isa1024.jpg" class="figure-img img-fluid rounded"   alt="Isabel Gimenez"/>
+									<figcaption class="figure-caption text-right">Isabel Gimenez</figcaption>
+								</figure>
+							</div>
+							<div class="col-md-6">
+								<p>Hola, hem dic Isabel, una persona creativa i inquieta que amb la fotografia he trobat la manera d'expressar-me i emocionar-me.</p>
+								<p>Vaig començar amb la fotografia com a hobby i poc a poc s’ha anat convertint en una part molt important en la meva vida. Vaig decidir formar-me amb el que m’omple de veritat que és la fotografia d’embaràs, nounat i bebès. Penso que és molt important la formació per aquesta especialitat tant delicada.</p>
+								<p>M'agrada captar les emocions del moment, són efímers i únics i hem sento privilegiada de poder captar-los amb la càmera.</p>
+								<br>
+								<h3>L'estudi</h3>
+								<p>Tinc un petit estudi a Lleida totalment equipat que he anat adequant amb aquest tipus de fotografia on hi ha tot el necessari per crear escenaris tendres i únics.</p>
+								<p>El que pretenc és que els clients se sentin ben a gust per a que les sessions siguin naturals i emocionants.</p>
+							</div>
+						</div>
+					</article>
+					<article style="display: none; margin-top: 5%" id="Scontacte">
+						<div class="row">
+							<div class="col-12">
+								<h2>Contacte</h2>
+								<br>
+								<p> <a class="bi bi-at" style="font-size: 4rem;color: cornflowerblue;" href="mailto:isabel@isabelgimenez.cat"></a>Correu-e: isabel@isabelgimenez.cat</p>
+								<p> <a class="bi bi-phone" style="font-size: 4rem;color: cornflowerblue;" href="tel:+34620293166"></a>tel: 620293166</p>
+								<p> <a class="bi bi-facebook" style="font-size: 4rem;color: cornflowerblue;" href="https://www.facebook.com/isabelgimenezfotografia"></a> Facebook: isabelgimenezfotografia</p>
+								<!--p>Facebook: <a href="https://www.facebook.com/isabelgimenezfotografia/">www.facebook.com/isabelgimenezfotografia</a></p-->
+								<p> <a class="bi bi-instagram" style="font-size: 4rem; color: cornflowerblue;" href="https://www.instagram.com/isabel_gimenez_fotografia"></a> Instagram: isabel_gimenez_fotografia</p>
 
-			<!--/div>
+							</div>
+						</div>
+					</article>
+					<article style="display: none" id="Snounat">
+						<h2>Nounat (7 a 14 dies)</h2>
+						<br>
+						<section>
+							<h3>Quin és el millor moment per a fer fotos de recent nascut?</h3>
+							<p>Aquest és un moment molt dolç, que passa molt ràpid i tinc l’oportunitat de fer que perduri en el temps. És molt bonic que les famílies puguin tenir aquests records per sempre. </p>
+							<p>Aquest tipus de reportatge s’ha de realizar entre els 7 i 14 dies després del naixement.</p>
+							<p>És el més recomanable ja que desrpés van perdent la flexibilitat, están més irritables i dormen menys hores.</p>
+							<br>
+						</section>
+						<section>
+							<h3>Quan s’ha de reservar?</h3>
+							<p>És important tenir la sessió reservada al menys 1 mes abans del naixement per poder organizar després la sessió.  </p>
+							<br>
+						</section>
+						<section>
+							<h3>On fem la sessió?</h3>
+							<p>Les sessions de nounat les realitzo a l’estudi on disposo de tot el necessari.</p>
+							<br>
+						</section>
+						<section>
+							<h3>Quan dura la sessió?</h3>
+							<p>Aquest tipus de sessions són llargues duren entre 3-3,5 hores., ja que tenim que fer descansos per poder alimentar i dormir al bebé. Cada sessió és diferent i anem al seu ritme.</p>
+							<br>
+						</section>
+						<section>
+							<h3>Que tinc que portar per la sessió?</h3>
+							<p>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, que triareu el mateix dia. Encara que si teniu un gorret, mantenta o peluix que us agrada ho podeu portar i mirem on ho podem encaixar.</p>
+							<br>
+						</section>
+						<section>
+							<h3>També surt la familia a les fotos de nounat?</h3>
+							<p>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es grans o mascota.</p>
+							<br>
+						</section>
+						<section>
+							<h3>Què inclou la sessió?</h3>
+							<p>El temps i dedicació de la sessió, el montatge de sets&attrezzo i el postprocessat de les imatges en alta qualitat.</p>
+							<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions.</p>
+							<br>
+						</section>
+					</article>
+					<article style="display: none" id="Sbebe">
+						<h2>Bebé (de 6 a 10 mesos)</h2>
+						<br>
+						<section>
+							<h3>Quin és el millor moment per a fer fotos al teu bebé?</h3>
+							<p>Entre els 6 y els 10 mesos, quan són capaços de quedar-se sentadets sense ajuda. És un moment molt bonic.  (Encara que a partir dels 4 mesos ja es pot fer, sobretot si es vol fer un seguiment del primer any).</p>
+							<br>
+							<h3>On fem la sessió a l’estudi o exterior?</h3>
+							<p>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’attrezzo per les sessions o a l’exterior on també es pot portar una mica d’attrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</p>
+							<br>
+							<h3>Quan dura la sessió?</h3>
+							<p>Les sessions de bebé duren entre 1 – 1,5 hores, amb diferents canvis de roba, i escenari, tant el bebé com els pares/germans/es.</p>
+							<br>
+							<h3>Que tinc que portar per la sessió?</h3>
+							<p>A l’estudi disposo de tot l’attrezzo necessari per fer aquest tipus de sessió, i al contractar-la us enviaré una mica d’informació sobre la roba que podeu portar.</p>
+							<br>
+							<h3>També surt la familia a les fotos de bebé?</h3>
+							<p>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es o mascota.</p>
+							<br>
+							<h3>Què inclou la sessió?</h3>
+							<p>El temps i dedicació de la sessió, el montatge de sets&atrezzo i el postprocessat de les imatges en alta qualitat.</p>
+							<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions. </p>
+							<br>
+						</section>
+					</article>
+					<article style="display: none" id="Sinfantil">
+						<h2>INFANTIL (de 2 a 11 anys)</h2>
+						<br>
+						<section>
+							<h3>On fem la sessió a l’estudi o exterior?</h3>
+							<p>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’attrezzo per les sessions o a l’exterior on també es pot portar una mica d’attrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</p>
+							<br>
+							<h3>Quan dura la sessió?</h3>
+							<p>Les sessions infantils duren entre 1 i 1,5 hores, amb diferents canvis de roba i escenari, tant el nen/a com els pares/germans/es.</p>
+							<br>
+							<h3>Que tinc que portar per la sessió?</h3>
+							<p>A l’estudi disposo de tot l’attrezzo necessari per fer aquest tipus de sessió, i al contractar-la us enviaré una mica d’informació sobre la roba que podeu portar.</p>
+							<br>
+							<h3>També surt la família a les fotos infantils?</h3>
+							<p>Si, sempre que vosaltres vulgueu faig fotografies amb els pares i si hi ha germans/es o mascota.</p>
+							<br>
+							<h3>Què inclou la sessió?</h3>
+							<p>El temps i dedicació de la sessió, el muntatge de sets&attrezzo i el postprocessat de les imatges en alta qualitat.</p>
+							<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en nombre de fotografies com amb àlbums, quadres o impressions.</p>
+							<br>
+						</section>
+					</article>
+					<article style="display: none" id="Sembaras">
+						<h2>EMBARÀS (28 i 34 setmanes) </h2>
+						<br>
+						<section>
+							<h3>Quin és el millor moment per fer les fotos?</h3>
+							<p>El moment ideal per aquest tipus de sessió és entre les 28 i 34 setmanes, que la panxeta ja és suficientment gran com per a que llueixi bonica i encara no s’està incòmoda.</p>
+							<br>
+							<h3>On fem la sessió a l’estudi o exterior?</h3>
+							<p>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’atrezzo per les sessions o a l’exterior on també es pot portar una mica d’atrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</p>
+							<br>
+							<h3>Quan dura la sessió?</h3>
+							<p>Les sessions d’embaràs tenen una durada 1,5-2 hores més o menys amb diferents canvis de roba, i escenaris.</p>
+							<br>
+							<h3>Que tinc que portar per la sessió?</h3>
+							<p>Cada embaràs i persona son diferents, així que abans de la sessió parlarem de l’enfoc que li donarem, ja que poden ser amb més o menys roba, com tu et sentis més còmoda. Hi ha vestuari i attrezzo a l’estudi, però sempre tindràs que portar roba teva per sentir-te tu mateixa.</p>
+							<p>Al contractar-la t’enviaré una mica d’informació sobre la roba que es pot portar. També es recomanable anar a la perruqueria i si és possible maquillatge professional, per a que la sessió quedi ben bonica.</p>
+							<br>
+							<h3>També surt la parella i a les fotos d’embaràs? </h3>
+							<p>Si, sempre que vosaltres vulgueu faig fotografies amb la parella i si hi ha germans/es o mascota.</p>
+							<br>
+							<h3>Què inclou la sessió?</h3>
+							<p>El temps i dedicació de la sessió, el muntatge de sets&attrezzo i el postprocessat de les imatges en alta qualitat.</p>
+							<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en nombre de fotografies com amb àlbums, quadres o impressions.</p>
+							<p>Si a més contractes la sessió de Nounat, tindràs un preu especial per a les dos sessions i un regalet.</p>
+						</section>
+					</article>
+					<article style="display: none" id="Scomunions">
+						<h2>COMUNIONS </h2>
+						<br>
+						<section>
+							<p>El dia de la Primera Comunió és molt especial per als nens/es, així doncs, que millor que una sessió fotogràfica per guardar els millors records per sempre.</p>
+							<br>
+							<h3>Com funciona un reportatge de comunió?</h3>
+							<p>Els reportatge es realitzen unes setmanes abans de la comunió, per poder elegir i dissenyar els recordatoris i/o altres detalls que es volen entregar als familiars i amics.</p>
+							<p>Per als reportatges de comunió disposo de diferents “col·leccions/lots” que el client triarà segons les seves necessitats. Van des dels més senzills fins els més complert amb àlbum inclòs, sempre amb una curada imatge i materials per a que la presentació de les fotografies llueixi perfecta tota la vida.</p>
+							<p>La sessió fotogràfica pot ser d’estudi o d’estudi més exterior per a tenir més varietat de fotografies.</p>
+							<p>Sempre és millor demanar una cita a l’estudi per poder veure el que ofereixo per aquest tipus de reportatge.</p>
+							<br>
+							<h3>També surt la família a les fotos?</h3>
+							<p>Si, sempre que vosaltres vulgueu en totes les meves sessions surt la família.</p>
+						</section>
+					</article>
+					<article style="display: none" id="Sregal">
+						<h2>VALS REGAL</h2>
+						<br>
+						<p>Si estàs pensant en fer un regal a una persona especial, una sessió fotogràfica és una molt bona opció. Contacta amb mi i et dono tota la informació.</p>
+						<p>Perquè el millor de la vida no son coses, son records!</p>
+					</article>
+				</div>
+			</div>
+		  	<!--/sessions-->
+
 		</div>
-		</div-->
-	</section>
-	<!--Portada-->
-	
-	<!-- Gallery -->
-    <div class="container-fluid" id="gallery">
-	    <ul class="grid" id="grid">
-	    	<!--li class='grid-sizer'></li-->
-	    </ul>
-	</div>
-	<!-- /Gallery -->
-		
-	<footer>
-		<p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p>
-		<p >2019 &copy; Tots els drets reservats</p>
-		<p class="text-right"> Powered by <a href="http://www.iva.cat">Iv&agrave; Domingo</a></p>
-	</footer>	
-		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+	</main>
+
+	<footer class="footer fixed-bottom">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4">
+					<!--p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p-->
+					<p>2021 &copy; Tots els drets reservats</p>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4 text-right">
+					<p> Powered by <a href="http://www.iva.cat">Iv&agrave; Domingo</a></p>
+				</div>
+			</div>
+			</div>
+	</footer>
+
+		<script src="js/library/imagesloaded.pkgd.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/AnimOnScroll.js"></script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-98654229-2', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
 </body>
+
 </html>
