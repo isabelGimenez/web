@@ -41,7 +41,7 @@ function getAbsolutePath() {
     let pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
-
+const gUrl = 'https://api.github.com/repos/isabelGimenez/web/contents/';
 const dUrl = './dossier.json';
 const bUrl = getAbsolutePath();
 let dossier = [];
@@ -266,7 +266,7 @@ window.onload = function(){
                 let Album = {};
                 Album.name = album.name;
                       Album.images = [];
-                      let aURL = bUrl+album.path+browseDetection() + 'images.json';
+                      let aURL = gUrl+album.path+browseDetection();
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
                                         alert('Something went wrong: ' + err);
